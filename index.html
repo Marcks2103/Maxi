@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maxifacilitéservices</title>
+<style>
+:root{--bg:#f5f8fc;--card:#fff;--tx:#0f1b2d;--mu:#5d6b80;--bd:#e3e9f1;--pr:#1463e6;--hero:#0b2340;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1522;--card:#142033;--tx:#e8eef7;--mu:#97a6bb;--bd:#24344b;--pr:#4c8dff;--hero:#07131f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1522;--card:#142033;--tx:#e8eef7;--mu:#97a6bb;--bd:#24344b;--pr:#4c8dff;--hero:#07131f;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:14px;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:21}
+.logo{font-weight:800;font-size:18px;color:var(--pr);text-decoration:none}.logo small{display:block;font-weight:500;font-size:11px;color:var(--mu)}
+nav{display:flex;gap:18px;flex:1;overflow-x:auto;font-size:14px}nav a{color:var(--tx);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}nav a.on{color:var(--pr);font-weight:600;border-color:var(--pr)}
+.btn{background:var(--pr);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.ghost{background:transparent;color:var(--pr);border:1px solid var(--pr)}
+.ic{background:var(--card);border:1px solid var(--bd);border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--tx)}
+.hero{background:linear-gradient(120deg,var(--hero),#16467f);color:#fff;padding:44px 20px 40px}
+.hero>div{max-width:1200px;margin:auto}.hero p.k{color:#5cc0ff;margin:0 0 8px;font-weight:600}
+h1{font-size:clamp(26px,4.5vw,40px);margin:0 0 10px;line-height:1.15}h1 em{font-style:normal;color:#38b6ff}
+.hero p{max-width:640px;margin:0 0 22px;opacity:.92}
+.sb{display:flex;background:#fff;border-radius:10px;max-width:760px;overflow:hidden;flex-wrap:wrap}
+.sb input,.sb select{border:0;padding:15px;font:inherit;color:#0f1b2d;background:#fff;outline:0}.sb input{flex:1;min-width:180px}.sb select{border-left:1px solid #e3e9f1}.sb .btn{border-radius:0;padding:0 24px;min-height:48px}
+main{max-width:1200px;margin:auto;padding:20px;display:grid;grid-template-columns:1fr 290px;gap:24px}
+@media(max-width:900px){main{grid-template-columns:1fr}aside{order:-1}}
+.cats{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 8px}
+.cat{flex:0 0 auto;min-width:104px;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;font:inherit;font-size:13px;font-weight:600;color:var(--tx)}
+.cat span{display:block;font-size:24px;margin-bottom:4px}.cat.on{border-color:var(--pr);outline:2px solid var(--pr)}
+.head{display:flex;justify-content:space-between;align-items:end;margin:22px 0 14px;gap:10px;flex-wrap:wrap}.head h2{margin:0;font-size:22px}.head p{margin:2px 0 0;color:var(--mu);font-size:14px}
+.link{background:none;border:0;color:var(--pr);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:10px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column}
+.c:hover{border-color:var(--pr)}
+.im{height:130px;display:grid;place-items:center;font-size:48px;position:relative}
+.tag{position:absolute;left:8px;bottom:8px;color:#fff;font-size:12px;font-weight:600;padding:3px 8px;border-radius:5px}
+.fav{position:absolute;right:8px;top:8px;width:34px;height:34px;border-radius:50%;border:0;background:#ffffffdd;cursor:pointer;font-size:17px;color:#c0392b}
+.cb{padding:14px;display:flex;flex-direction:column;flex:1}.cb h3{margin:0 0 8px;font-size:15px}.pr{font-size:14px;color:var(--mu)}.st{font-size:13px;margin:8px 0;color:#e8a100}.st b{color:var(--mu);font-weight:500}.loc{font-size:13px;color:var(--mu)}
+.cb .btn{margin-top:12px;padding:8px;font-size:14px}
+aside .box{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:18px;margin-bottom:16px}
+@media(min-width:901px){aside .box{position:sticky;top:76px}}
+aside h3{margin:0 0 14px;font-size:16px}aside label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+input[type=text],input[type=tel],input[type=email],input[type=password],select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;font-size:14px}
+input[type=range]{width:100%;accent-color:var(--pr)}.rg{display:flex;justify-content:space-between;font-size:12px;color:var(--mu)}
+aside .btn{width:100%;margin-top:12px}
+.chk{display:flex!important;align-items:center;gap:8px;font-weight:500!important}.chk input{width:auto}
+.why{background:color-mix(in srgb,var(--pr) 10%,var(--card));border-radius:10px;padding:16px;font-size:14px}.why h4{margin:0 0 10px;color:var(--pr)}.why p{margin:6px 0}
+.empty{padding:40px;text-align:center;color:var(--mu);grid-column:1/-1}
+section.s{max-width:1200px;margin:auto;padding:30px 20px}section.s h2{margin:0 0 8px;font-size:24px}section.s>p{color:var(--mu);max-width:680px;margin:0 0 18px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.pt{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:18px;text-align:center}.pt b{display:block;font-size:30px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:20px}
+.card label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
+footer{background:var(--hero);color:#cfe0f5;text-align:center;padding:22px 20px;font-size:13px}
+dialog{border:0;border-radius:12px;padding:0;width:min(520px,92vw);background:var(--card);color:var(--tx);max-height:90vh}
+dialog::backdrop{background:#0008}.dg{padding:22px}.dg h3{margin:0 0 6px}.x{float:right;background:none;border:0;font-size:22px;cursor:pointer;color:var(--mu)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#0f1b2d;color:#fff;padding:12px 18px;border-radius:8px;font-size:14px;z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}.toast.on{opacity:1}
+:focus-visible{outline:2px solid var(--pr);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#accueil">Maxifacilitéservices<small>Word Tech SARL</small></a>
+  <nav id="nav"><a href="#accueil" class="on">Accueil</a><a href="#services">Nos services</a><a href="#partenaires">Nos partenaires</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+  <button class="ic" id="theme" aria-label="Changer de thème">🌓</button>
+  <button class="btn" id="login">Se connecter / S’inscrire</button>
+</header>
+
+<section class="hero" id="accueil"><div>
+  <p class="k">Votre partenaire de confiance</p>
+  <h1>Trouvez facilement les meilleurs services <em>près de chez vous</em></h1>
+  <p>Nettoyage, informatique, langues, emploi, formalisation, transport, et bien plus encore.</p>
+  <div class="sb">
+    <input id="q" type="search" placeholder="Rechercher un service, une catégorie…" aria-label="Recherche">
+    <select id="ql" aria-label="Ville"></select>
+    <button class="btn" id="go">Rechercher</button>
+  </div>
+</div></section>
+
+<main id="services">
+  <div>
+    <div class="cats" id="cats"></div>
+    <div class="head"><div><h2>Nos services populaires</h2><p id="sub"></p></div><button class="link" id="all">Voir tous les services</button></div>
+    <div class="grid" id="grid"></div>
+  </div>
+  <aside>
+    <div class="box">
+      <h3>Filtrer les services</h3>
+      <input type="text" id="fq" placeholder="Rechercher un service…" aria-label="Rechercher">
+      <label for="fc">Catégorie</label><select id="fc"></select>
+      <label for="fl">Localisation</label><select id="fl"></select>
+      <label for="fp">Prix maximum : <span id="pv"></span></label>
+      <input type="range" id="fp" min="0" max="500" step="10" value="500">
+      <div class="rg"><span>0 $</span><span>500 $+</span></div>
+      <label for="fs">Trier par</label>
+      <select id="fs"><option value="pop">Plus populaires</option><option value="note">Mieux notés</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select>
+      <label class="chk"><input type="checkbox" id="ff"> Mes favoris seulement (<span id="fn">0</span>)</label>
+      <button class="btn ghost" id="reset">Réinitialiser</button>
+    </div>
+    <div class="why"><h4>Pourquoi nous choisir ?</h4><p>✔ Des professionnels qualifiés</p><p>✔ Des services fiables et rapides</p><p>✔ Un accompagnement personnalisé</p><p>✔ Une plateforme simple et sécurisée</p></div>
+  </aside>
+</main>
+
+<section class="s" id="partenaires"><h2>Nos partenaires</h2><p>Des entreprises et institutions avec lesquelles nous travaillons pour livrer un service fiable.</p>
+<div class="pg"><div class="pt"><b>🏢</b>Entreprises minières</div><div class="pt"><b>🏫</b>Centres de formation</div><div class="pt"><b>🏛️</b>Administrations</div><div class="pt"><b>🚚</b>Transporteurs agréés</div></div></section>
+
+<section class="s" id="apropos"><h2>À propos</h2><p>Maxifacilitéservices, de Word Tech SARL, regroupe en un seul endroit des prestataires de confiance à Kolwezi, Lubumbashi et Likasi. Vous choisissez un service, nous vous mettons en relation et vous accompagnons jusqu’à la fin.</p>
+<div class="pg"><div class="pt"><b>11</b>catégories de services</div><div class="pt"><b>3</b>villes couvertes</div><div class="pt"><b>4,6 ★</b>note moyenne</div></div></section>
+
+<section class="s" id="contact"><h2>Contact</h2><p>Écrivez-nous : votre message s’ouvre dans WhatsApp, prêt à envoyer.</p>
+<div class="two"><form class="card" id="cf"><label for="cn">Votre nom</label><input type="text" id="cn" required><label for="ct">Téléphone</label><input type="tel" id="ct" required><label for="cm">Message</label><textarea id="cm" rows="4" required></textarea><button class="btn" style="margin-top:14px">Envoyer sur WhatsApp</button></form>
+<div class="card"><h3 style="margin-top:0">Coordonnées</h3><p>📍 Kolwezi · Lubumbashi · Likasi</p><p>📞 <a id="tel" href="#"></a></p><p>💬 <a id="wa" href="#">Discuter sur WhatsApp</a></p></div></div></section>
+<footer>© 2026 Maxifacilitéservices — Word Tech SARL. Tous droits réservés.</footer>
+
+<dialog id="dsv"><div class="dg"><button class="x" data-close aria-label="Fermer">×</button><div id="dbody"></div></div></dialog>
+<dialog id="dlg"><div class="dg"><button class="x" data-close aria-label="Fermer">×</button><div id="auth"></div></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const WA="243997905896"; // numéro WhatsApp de l’entreprise : à remplacer si besoin
+const CATS=[["Nettoyage","🧹","#1463e6"],["Informatique","💻","#16a34a"],["Langues","💬","#f59e0b"],["Emploi & Formation","💼","#8b5cf6"],["Formalisation","📄","#ef4444"],["Voyage & Documents","✈️","#06b6d4"],["Digital Marketing","📈","#4b4f9c"],["Gasoil & Transport","🚚","#d97706"],["Énergie solaire","☀️","#0d9488"],["Location d’engins","🚜","#7c3aed"],["Traiteur","🍲","#dc2626"]];
+const VILLES=["Kolwezi","Lubumbashi","Likasi"];
+const S=[
+{n:"Nettoyage de bureaux et maisons",c:0,p:100,l:"Kolwezi",r:4.8,v:120,d:"Équipe formée, produits fournis. Bureaux, maisons, fin de chantier."},
+{n:"Formation Microsoft Office & Photoshop",c:1,p:100,pt:"100 $ – 150 $",l:"Kolwezi",r:4.7,v:86,d:"Cours pratiques en petit groupe, du niveau débutant au niveau avancé."},
+{n:"Passeport + Visa + Permis de conduire",c:5,p:170,l:"Kolwezi",r:4.9,v:214,d:"Nous montons et suivons vos dossiers auprès des administrations."},
+{n:"Placement de personnel",c:3,p:0,pt:"À partir de 10 % de commission",l:"Kolwezi",r:4.6,v:73,d:"Recrutement et mise à disposition de personnel qualifié."},
+{n:"Transport de gasoil en citerne",c:7,p:150,l:"Lubumbashi",r:4.5,v:41,d:"Livraison de gasoil en citerne sur site, avec suivi de la livraison."},
+{n:"Installation de panneaux solaires",c:8,p:400,l:"Kolwezi",r:4.8,v:58,d:"Étude, installation et maintenance de panneaux solaires."},
+{n:"Location de chargeuses et engins",c:9,p:300,l:"Likasi",r:4.4,v:33,d:"Chargeuses et engins de chantier, avec ou sans opérateur."},
+{n:"Service traiteur pour événements",c:10,p:80,l:"Kolwezi",r:4.7,v:97,d:"Repas et buffets pour mariages, réunions et événements d’entreprise."},
+{n:"Cours d’anglais et de français",c:2,p:40,l:"Lubumbashi",r:4.6,v:64,d:"Cours particuliers ou en groupe, à votre rythme."},
+{n:"Création de société (formalisation)",c:4,p:250,l:"Kolwezi",r:4.9,v:140,d:"Immatriculation, statuts et démarches pour lancer votre société."},
+{n:"Gestion de réseaux sociaux",c:6,p:120,l:"Lubumbashi",r:4.3,v:29,d:"Création de contenu et animation de vos pages, chaque mois."}];
+S.forEach((x,i)=>x.i=i);
+const $=id=>document.getElementById(id);
+let cat=-1,more=false,favs=[],user=null;
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+favs=ls.get("mfs-favs",[]);user=ls.get("mfs-user",null);
+const fill=(el,arr,first)=>el.innerHTML=(first?`<option value="">${first}</option>`:"")+arr.map(a=>`<option>${a}</option>`).join("");
+fill($("ql"),VILLES,"Toutes les villes");fill($("fl"),VILLES,"Toutes les villes");fill($("fc"),CATS.map(c=>c[0]),"Toutes les catégories");
+const toast=t=>{const e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),2600)};
+const stars=r=>"★".repeat(Math.round(r))+"☆".repeat(5-Math.round(r));
+const wa=t=>window.open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,"_blank","noopener");
+function drawCats(){const list=more?CATS.map((c,i)=>i):[0,1,2,3,4,5,6];
+ $("cats").innerHTML=list.map(i=>`<button class="cat" data-i="${i}"><span>${CATS[i][1]}</span>${CATS[i][0]}</button>`).join("")+`<button class="cat" data-i="more"><span>${more?"−":"⋯"}</span>${more?"Moins":"Autres services"}</button>`}
+function render(){
+ const q=($("fq").value||$("q").value).toLowerCase().trim(),l=$("fl").value,max=+$("fp").value,s=$("fs").value,fo=$("ff").checked;
+ $("pv").textContent=max>=500?"500 $+":max+" $";$("fn").textContent=favs.length;
+ let a=S.filter(x=>(cat<0||x.c===cat)&&(!l||x.l===l)&&(max>=500||x.p<=max)&&(!fo||favs.includes(x.i))&&(x.n+" "+CATS[x.c][0]).toLowerCase().includes(q));
+ a.sort((x,y)=>s==="asc"?x.p-y.p:s==="desc"?y.p-x.p:s==="note"?y.r-x.r:y.v-x.v);
+ $("sub").textContent=`${a.length} service${a.length>1?"s":""} ${l?"à "+l:"dans nos 3 villes"}.`;
+ $("grid").innerHTML=a.length?a.map(x=>{const c=CATS[x.c],f=favs.includes(x.i);return `<article class="c" data-s="${x.i}"><div class="im" style="background:linear-gradient(135deg,${c[2]}33,${c[2]}88)">${c[1]}<span class="tag" style="background:${c[2]}">${c[0]}</span><button class="fav" data-f="${x.i}" aria-label="${f?"Retirer des favoris":"Ajouter aux favoris"}" aria-pressed="${f}">${f?"♥":"♡"}</button></div><div class="cb"><h3>${x.n}</h3><div class="pr">${x.pt||"À partir de "+x.p+" $"}</div><div class="st">${stars(x.r)} <b>${x.r} (${x.v})</b></div><div class="loc">📍 ${x.l}</div><button class="btn" data-o="${x.i}">Demander ce service</button></div></article>`}).join(""):`<p class="empty">Aucun service ne correspond. Élargissez le prix, changez de ville ou réinitialisez les filtres.</p>`;
+ document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("on",+b.dataset.i===cat));
+ $("fc").value=cat<0?"":CATS[cat][0];
+}
+function openSv(i){const x=S[i],c=CATS[x.c];
+ $("dbody").innerHTML=`<h3>${c[1]} ${x.n}</h3><p style="color:var(--mu);margin:4px 0 10px">${x.d}</p><p><b>${x.pt||"À partir de "+x.p+" $"}</b> · 📍 ${x.l} · <span style="color:#e8a100">${stars(x.r)}</span> ${x.r} (${x.v} avis)</p><form id="sf"><label style="font-size:13px;font-weight:600">Votre nom</label><input type="text" id="sn" required value="${user?user.name:""}"><label style="font-size:13px;font-weight:600;display:block;margin-top:10px">Téléphone</label><input type="tel" id="st" required><label style="font-size:13px;font-weight:600;display:block;margin-top:10px">Précisions (facultatif)</label><textarea id="sm" rows="3"></textarea><button class="btn" style="width:100%;margin-top:14px">Envoyer la demande sur WhatsApp</button></form>`;
+ $("sf").onsubmit=e=>{e.preventDefault();wa(`Bonjour, je souhaite le service « ${x.n} » (${x.l}).\nNom : ${$("sn").value}\nTéléphone : ${$("st").value}\n${$("sm").value}`);$("dsv").close();toast("Demande prête dans WhatsApp")};
+ $("dsv").showModal()}
+function authView(){
+ $("auth").innerHTML=user?`<h3>Bonjour ${user.name}</h3><p style="color:var(--mu)">${user.email}</p><button class="btn" id="out" style="width:100%">Se déconnecter</button>`:`<h3>Créer un compte</h3><p style="color:var(--mu);margin:4px 0 8px">Pour garder vos favoris et préremplir vos demandes.</p><form id="af"><input type="text" id="an" placeholder="Nom complet" required style="margin-top:8px"><input type="email" id="ae" placeholder="E-mail" required style="margin-top:8px"><input type="password" id="ap" placeholder="Mot de passe (6 caractères min.)" minlength="6" required style="margin-top:8px"><button class="btn" style="width:100%;margin-top:14px">S’inscrire</button></form>`;
+ $("login").textContent=user?"👤 "+user.name.split(" ")[0]:"Se connecter / S’inscrire";
+ if(user)$("out").onclick=()=>{user=null;ls.set("mfs-user",null);authView();toast("Déconnecté")};
+ else $("af").onsubmit=e=>{e.preventDefault();user={name:$("an").value,email:$("ae").value};ls.set("mfs-user",user);authView();toast("Compte créé")}}
+document.body.addEventListener("click",e=>{
+ if(e.target.closest("[data-close]"))e.target.closest("dialog").close();
+ else if(e.target.tagName==="DIALOG")e.target.close();
+ const f=e.target.closest("[data-f]");if(f){e.stopPropagation();const i=+f.dataset.f;favs=favs.includes(i)?favs.filter(v=>v!==i):[...favs,i];ls.set("mfs-favs",favs);render();return}
+ const o=e.target.closest("[data-o]");if(o){openSv(+o.dataset.o);return}
+ const a=e.target.closest("article[data-s]");if(a)openSv(+a.dataset.s)});
+$("cats").onclick=e=>{const b=e.target.closest(".cat");if(!b)return;if(b.dataset.i==="more"){more=!more;drawCats()}else{const i=+b.dataset.i;cat=i===cat?-1:i}render()};
+$("fc").onchange=e=>{cat=CATS.findIndex(c=>c[0]===e.target.value);render()};
+$("ql").onchange=e=>{$("fl").value=e.target.value;render()};
+$("fl").onchange=e=>{$("ql").value=e.target.value;render()};
+$("q").oninput=()=>{$("fq").value=$("q").value;render()};
+$("fq").oninput=()=>{$("q").value=$("fq").value;render()};
+$("go").onclick=()=>{render();$("services").scrollIntoView()};
+["fp","fs","ff"].forEach(id=>$(id).addEventListener("input",render));
+const reset=()=>{cat=-1;$("fq").value=$("q").value="";$("fp").value=500;$("fl").value=$("ql").value="";$("ff").checked=false;$("fs").value="pop";render()};
+$("all").onclick=reset;$("reset").onclick=reset;
+$("login").onclick=()=>{authView();$("dlg").showModal()};
+$("theme").onclick=()=>{const d=document.documentElement,dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;d.dataset.theme=dark?"light":"dark";ls.set("mfs-theme",d.dataset.theme)};
+const th=ls.get("mfs-theme",null);if(th)document.documentElement.dataset.theme=th;
+$("cf").onsubmit=e=>{e.preventDefault();wa(`Bonjour, c’est ${$("cn").value} (${$("ct").value}).\n${$("cm").value}`);toast("Message prêt dans WhatsApp")};
+$("tel").textContent="+"+WA;$("tel").href="tel:+"+WA;$("wa").href="https://wa.me/"+WA;
+const ids=["accueil","services","partenaires","apropos","contact"];
+addEventListener("scroll",()=>{let cur=ids[0];ids.forEach(id=>{if($(id).getBoundingClientRect().top<120)cur=id});document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))},{passive:true});
+drawCats();authView();render();
+</script>
+</body>
+</html>
